@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mg.completion.interact.FXMLController">
+    <children>
+      <FlowPane hgap="15.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="169.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TextField fx:id="hostField" prefWidth="100.0" promptText="Host" />
+            <TextField fx:id="portField" prefWidth="100.0" promptText="Port" />
+            <Button fx:id="connectButton" mnemonicParsing="false" onAction="#onConnect" text="Connect" />
+         </children>
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </FlowPane>
+      <TextArea fx:id="textArea" editable="false" prefHeight="170.0" prefWidth="302.0" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="29.0" />
+      <TextField fx:id="textField" onKeyReleased="#onUserInput" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="169.0" />
+    </children>
+</AnchorPane>

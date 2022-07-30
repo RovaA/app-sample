@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Demo</title>
+<link rel="stylesheet" 	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css" />
+<link rel="stylesheet" 	href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+</head>
+<body>
+	<div class="container">
+	<h2>List of Todo</h2>
+	<a th:href="@{'/create'}" class="btn btn-primary">Create</a>
+	<table id="my-table" class="table table-bordered">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>text</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="entity : ${entities}">
+				<td>		
+					<span th:text="${entity.id}"></span>
+		        </td>
+				<td>		
+					<span th:text="${entity.text}"></span>
+		        </td>
+				<td>
+					<div style="display:inline-block">
+						<a th:href="@{'/create/' + ${entity.id}}" class="btn btn-success">Update</a>	
+					</div>	
+					<div style="display:inline-block">
+						<form th:action="@{/delete}" method="post">
+							<input type="hidden" name="id" th:value="${entity.id}" />
+				            <button type="submit" class="btn btn-primary">Delete</button>
+				        </form>
+					</div>	
+		        </td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Demo</title>
+<link rel="stylesheet" 	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css" />
+</head>
+<body>
+	<div class="container">
+		<h2>Form</h2>
+	    <form action="#" th:action="@{/create}" th:object="${todo}" method="post">
+	        <input type="hidden" th:field="*{id}" />
+	        <p>Message: <input type="text" th:field="*{text}" /></p>
+	        <p><input type="submit" value="Submit" class="btn btn-primary" />
+	    </form>
+	</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.min.js"></script>
+</body>
+</html>

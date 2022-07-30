@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Demo</title>
+<link rel="stylesheet" 	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css" />
+</head>
+<body>
+	<div class="container">
+		<h2>Sign Up</h2>
+	    <form action="#" th:action="@{/user/create}" th:object="${user}" method="post">
+	    <input type="hidden" name="id" th:field="*{id}" />
+		<table>
+	        <tr>
+	        	<td><label>User Name: </label></td>
+	        	<td><input type="text" name="username" th:field="*{username}" class="form-control" /></td>
+	        </tr>
+	        <tr>
+	        	<td>Password: </label></td>
+	        	<td><input type="text" name="password" th:field="*{password}" class="form-control" /></td>
+	        </tr>
+	        <tr>
+	        	<td>Role: </label></td>
+	        	<td>
+	        		<select name="role" class="form-control">
+	        			<option th:each="role : ${roles}" th:field="*{role}" th:value="${role.name()}" th:text="${role.name()}"></option>
+	        		</select>
+	        	</td>
+	        </tr>
+	        <tr>
+	        	<td><input type="submit" value="Sign Up" class="btn btn-primary" /></td>
+	        </tr>
+	    </table>
+	    </form>
+	</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.min.js"></script>
+</body>
+</html>

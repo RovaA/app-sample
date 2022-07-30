@@ -1,0 +1,74 @@
+<div class="container">
+	<h2>Detail</h2>
+	<div ng-controller="TodoDetailController as todoDetail">
+		<div>[ <a ng-href="#/" >Home</a> ]</div>
+		<br/>
+		<form name="form" ng-submit="todoDetail.updateTodo()">
+		<table class="table">
+			<tr>
+				<th scope="col">ID</th>
+				<th scope="col">Creation date</th>
+				<th scope="col">Update date</th>
+				<th scope="col">Text</th>
+				<th scope="col">Done</th>
+				<th scope="col">Actions</th>
+			</tr>
+			<tr>
+				<td>
+					<div ng-if="!editMode">
+						{{ todoDetail.entity.id }}
+					</div>
+					<div ng-if="editMode">
+						<input type="text" ng-model="todoDetail.entity.id" disabled />
+					</div>
+				</td>
+				<td>
+					<div ng-if="!editMode">
+						{{ todoDetail.entity.creationDate | date:'dd-MM-yyyy' }}
+					</div>
+					<div ng-if="editMode">
+						<input type="text" ng-model="todoDetail.entity.creationDate" disabled />
+					</div>
+				</td>
+				<td>
+					<div ng-if="!editMode">
+						{{ todoDetail.entity.updateDate | date:'dd-MM-yyyy' }}
+					</div>
+					<div ng-if="editMode">
+						<input type="text" ng-model="todoDetail.entity.updateDate" disabled />
+					</div>
+				</td>
+				<td>
+					<div ng-if="!editMode">
+						{{ todoDetail.entity.text }}
+					</div>
+					<div ng-if="editMode">
+						<input type="text" ng-model="todoDetail.entity.text" required />
+					</div>
+				</td>
+				<td>
+					<div ng-if="!editMode">
+						<input type="checkbox" ng-model="todoDetail.entity.done" disabled/>
+					</div>
+					<div ng-if="editMode">
+						<input type="checkbox" ng-model="todoDetail.entity.done"/>
+					</div>
+				</td>
+				<td>
+					<div ng-if="!editMode">
+						<a href="" class="btn btn-primary" ng-click="todoDetail.changeMode()">Update</a>
+					</div>
+					<div ng-if="editMode">
+						<div class="d-inline">
+							<button type="submit" class="btn btn-success" ng-disabled="todoDetail.noChange()">Save</button>
+						</div>
+						<div class="d-inline">
+							<a href="" class="btn btn-danger" ng-click="todoDetail.changeMode()">Cancel</a>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+		</form>
+	</div>
+</div>

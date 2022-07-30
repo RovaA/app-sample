@@ -1,0 +1,46 @@
+<div class="container">
+	<h2>Todo</h2>
+	<div ng-controller="TodoListController as todoList">
+		<div color-green>{{ remaining() }} of {{ todos.length }} remaining</div>
+		<br/>
+		<form ng-submit="addTodo()" class="form-inline">
+			<input type="text" ng-model="todoText" size="30" placeholder="Add new todo..." required ng-minlength="2" class="form-control"/>
+			<input class="btn btn-primary" type="submit" value="add" />
+		</form>
+		<br/>
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<div class="input-group-text">
+			      <input type="checkbox" ng-model="doneModel" aria-label="Checkbox for following text input">
+			    </div>
+			</div>
+			<input type="text" class="form-control" placeholder="Filter todo..." ng-model="searchModel"  aria-describedby="basic-addon1"/>
+			<div class="input-group-append">
+				<div class="input-group-text">
+					<button type="button" ng-click="onSearch(searchModel)">
+						<i class="fa fa-search"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+		<ul class="list-group">
+			<li ng-repeat="todo in todos | orderBy:'updateDate':true | isDone:doneModel" class="list-group-item">
+				<div class="row">
+					<div class="col-1">
+						<input type="checkbox"	ng-model="todo.done" ng-change="update(todo)"/>
+					</div>
+					<div class="col-10">
+						<a ng-href="#/detail/{{ todo.id }}">{{ todo.text }}</a>
+					</div>
+					<div class="col-1">
+						<a href="" ng-click="delete(todo)" class="btn btn-danger">Delete</a>
+					</div>
+				</div>
+				<small>Create: {{ todo.creationDate | date:'dd-MM-yyyy' }} | Update: {{ todo.updateDate | date:'dd-MM-yyyy' }}</small>
+			</li>
+		</ul>
+		<div ng-if="!todos.length" class="alert alert-primary">
+			Nothing to show yet.
+		</div>
+	</div>
+</div>

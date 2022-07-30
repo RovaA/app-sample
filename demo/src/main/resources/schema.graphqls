@@ -1,0 +1,12 @@
+type Query {
+
+    find(id: ID): Todo
+    findTodo(term: String!): [Todo]
+    findAll: [Todo]
+
+}
+
+type Todo {
+    id: ID
+    text: String
+}

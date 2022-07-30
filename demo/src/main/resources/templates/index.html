@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="application" ng-strict-di>
+<head>
+<meta charset="UTF-8">
+<title>Demo</title>
+<link rel="stylesheet" 	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-route.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-resource.js"></script>
+</head>
+<body>
+	<div ng-view></div>	
+<script src="js/application.js"></script>
+<script src="js/services/todo-service.js"></script>
+<script src="js/components/list/todo-list-controller.js"></script>
+<script src="js/components/detail/todo-detail-controller.js"></script>
+<script src="js/directives/todo-directive.js"></script>
+<script src="js/filters/todo-filter.js"></script>
+<script src="js/constants/todo-constant.js"></script>
+</body>
+</html>

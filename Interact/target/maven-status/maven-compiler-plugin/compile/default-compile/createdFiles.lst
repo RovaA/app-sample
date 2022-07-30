@@ -1,0 +1,6 @@
+mg/completion/interact/socket/event/PushEvent.class
+mg/completion/interact/socket/event/SendEvent.class
+mg/completion/interact/MainApp.class
+mg/completion/interact/socket/IsView.class
+mg/completion/interact/socket/SocketHandler.class
+mg/completion/interact/FXMLController.class

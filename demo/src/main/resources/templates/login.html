@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Demo</title>
+<link rel="stylesheet" 	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css" />
+</head>
+<body>
+	<div class="container">
+		<h2>Login</h2>
+	    <form action="#" th:action="@{/login}" method="post">
+		<table>
+	        <tr>
+	        	<td><label>User Name: </label></td>
+	        	<td><input type="text" name="username" class="form-control" /></td>
+	        </tr>
+	        <tr>
+	        	<td>Password: </label></td>
+	        	<td><input type="password" name="password" class="form-control" /></td>
+	        </tr>
+	        <tr>
+	        	<td><input type="submit" value="Sign In" class="btn btn-primary" /></td>
+	        	<td><a th:href="@{'/user/signup'}">Create user.</a></td>
+	        </tr>
+	    </table>
+	    </form>
+	</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.min.js"></script>
+</body>
+</html>
