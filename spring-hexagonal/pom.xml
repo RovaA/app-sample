@@ -7,7 +7,7 @@
 	<groupId>mg.rova</groupId>
 	<artifactId>demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>demo</name>
 	<description>Demo project for Spring Boot</description>
@@ -115,10 +115,10 @@
 		</dependency>
 
 		<!-- Elasticsearch -->
-		<!--<dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-elasticsearch</artifactId>
-		</dependency>-->
+		</dependency>
 
 		<dependency>
 			<groupId>org.elasticsearch.client</groupId>
@@ -128,13 +128,11 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.11</version>
-		</dependency>
+			</dependency>
 
 		<dependency>
 			<groupId>org.mariadb.jdbc</groupId>
 			<artifactId>mariadb-java-client</artifactId>
-			<version>2.7.4</version>
 		</dependency>
 
 		<!-- Flyway DB -->
